@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "Notetaker",
+  "version": "1.0",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting",
+    "cookies",
+    "tabs",
+    "identity"
+
+  ],
+  "background": {
+    "service_worker": "javascript/background.js"
+  },
+  "action": {
+    "default_popup": "views/index.html",
+    "default_icon": {
+      "128": "logo.png"
+    }
+  },
+  "icons": {
+    "128": "logo.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["javascript/contentScript.js"]
+    }
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "oauth2": {
+    "client_id": "286065707183-hajn74c8u4o1mpn73co3o0omp1stjufa.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email"
+    ]
+  },
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAgFbIrnF3oWbqomZh8CHzkTE9MxD/4tVmCTJ3JYSzYhtVnX7tVAbXZRRPuYLavIFaS15tojlRNRhfOdvyTXew+RaSJjOIzdo30byBU3C4mJAtRtSjb+U9fAsJxStVpXvdQrYNNFCCx/85T6oJX3qDsYexFCs/9doGqzhCc5RvN+W4jbQlfz7n+TiT8TtPBKrQWGLYjbEdNpPnvnorJBMys/yob82cglpqbWI36sTSGwQxjgQbp3b4mnQ2R0gzOcY41cMOw8JqSl6aXdYfHBTLxCy+gz9RCQYNUhDewxE1DeoEgAh21956oKJ8Sn7FacyMyNcnWvNhlMzPtr/0RUK7nQIDAQAB"
+}
